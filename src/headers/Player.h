@@ -18,6 +18,9 @@ class Player
         float attackCooldown;
         float attackCooldownMax;
 
+        int hp;
+        int hpMax;
+
         //Private functions
         void initVariables();
         void initTexture();
@@ -30,6 +33,14 @@ class Player
         // Accessors
         const sf::Vector2f& getPos() const;
         const sf::FloatRect getBounds() const;
+        const int& getHp() const;
+        const int& getHpMax() const;
+
+        // Modifiers - including both options so you can either set as a vector or separately
+        void setPosition(const sf::Vector2f pos);
+        void setPosition(const float x, const float y);
+        void setHp(const int hp);
+        void loseHp(const int value);
 
         // Functions
         void move(const float dirX, const float dirY);
